@@ -11,6 +11,7 @@ class Article {
   final String category;
   final String date;
   final String link;
+  final String money;
   final int catId;
 
   Article(
@@ -24,6 +25,7 @@ class Article {
       this.category,
       this.date,
       this.link,
+      this.money,
       this.catId});
 
   factory Article.fromJson(Map<String, dynamic> json) {
@@ -33,6 +35,7 @@ class Article {
         .toString();
     String title = json['title']['rendered'];
     String link = json["link"];
+    String money = json["money"];
     int id = -1;
 
     String image =
@@ -76,6 +79,7 @@ class Article {
         category: category,
         date: date,
         link: link,
+        money: money,
         catId: catId);
   }
 

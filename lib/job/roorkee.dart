@@ -10,14 +10,14 @@ import 'package:flutter/material.dart';
 import 'package:lokaarpan/common/constants.dart';
 import 'package:lokaarpan/common/helpers.dart';
 import 'package:lokaarpan/models/article.dart';
+import 'package:lokaarpan/pages/category_articles.dart';
 import 'package:lokaarpan/single_articles/featured_article.dart';
 import 'package:lokaarpan/single_articles/job_article.dart';
-import 'package:lokaarpan/widgets/articleBox.dart';
+import 'package:lokaarpan/widgets/jobarticleBox.dart';
 import 'package:lokaarpan/widgets/articleBoxFeatured.dart';
 import 'package:http/http.dart' as http;
 import 'package:loading/indicator/ball_beat_indicator.dart';
 import 'package:loading/loading.dart';
-import 'package:lokaarpan/widgets/job_categories.dart';
 
 
 class RoorkeeJobArticles extends StatefulWidget {
@@ -212,7 +212,7 @@ class _RoorkeeJobArticlesState extends State<RoorkeeJobArticles> {
                       },
                       child: Column(
                         children: <Widget>[
-                          ENABLE_ADS && index % 5 == 0
+                          ENABLE_ADS && index % 15 == 0
                               ? Container(
                             margin: EdgeInsets.fromLTRB(10, 4, 4, 0),
                             child: Card(
@@ -224,7 +224,7 @@ class _RoorkeeJobArticlesState extends State<RoorkeeJobArticles> {
                             ),
                           )
                               : Container(),
-                          articleBox(context, item, heroId),
+                          jobarticleBox(context, item, heroId),
                         ],
                       ),
                     );
@@ -255,6 +255,52 @@ class _RoorkeeJobArticlesState extends State<RoorkeeJobArticles> {
                 size: 60.0,
                 color: Theme.of(context).accentColor));
       },
+    );
+  }
+
+  Widget jobCategories(BuildContext context) {
+    return GridView.count(
+      padding: EdgeInsets.all(16),
+      shrinkWrap: true,
+      physics: ScrollPhysics(),
+      crossAxisCount: 4,
+      children: List.generate(CATEGORIES.length, (index) {
+        var cat = CATEGORIES[index];
+        var name = cat[0];
+        var image = cat[1];
+        var catId = cat[2];
+
+        return Card(
+          child: InkWell(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => CategoryArticles(catId, name),
+                ),
+              );
+            },
+            child: Container(
+              padding: EdgeInsets.fromLTRB(8, 16, 8, 8),
+              child: Column(
+                children: <Widget>[
+                  SizedBox(width: 100, height: 45, child: Image.asset(image)),
+                  Spacer(),
+                  Text(
+                    name,
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 10,
+                      height: 1,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  )
+                ],
+              ),
+            ),
+          ),
+        );
+      }),
     );
   }
 
@@ -320,3 +366,14 @@ class _RoorkeeJobArticlesState extends State<RoorkeeJobArticles> {
     );
   }
 }
+const List<dynamic> CATEGORIES = [
+  ["Marketing", "assets/boxed/lifestyle.png", 7248],
+  ["Fashion", "assets/boxed/fashion.png", 12],
+  ["Music", "assets/boxed/music.png", 14],
+  ["Photography", "assets/boxed/photography.png", 15],
+  ["Sport", "assets/boxed/sport.png", 13],
+  ["World", "assets/boxed/world.png", 11],
+  ["Health", "assets/boxed/health.png", 8],
+  ["Travel", "assets/boxed/travel.png", 7],
+  ["Recipies", "assets/boxed/recipies.png", 10],
+];

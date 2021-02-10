@@ -26,7 +26,7 @@ class _HomePageState extends State<HomePage> {
             ),
             bottom: TabBar(
               isScrollable: true,
-              indicatorColor: Colors.white,
+              indicatorColor: Theme.of(context).primaryColorDark,
               indicatorWeight: 6.0,
               onTap: (index){
                 setState(() {
@@ -55,7 +55,7 @@ class _HomePageState extends State<HomePage> {
                   child: Container(
                     child: Text(
                       'Dehradun',
-                      style: TextStyle(color: Colors.white, fontSize: 18.0),
+                      style: TextStyle(color: Theme.of(context).primaryColorDark, fontSize: 18.0),
                     ),
                   ),
                 ),
@@ -63,7 +63,7 @@ class _HomePageState extends State<HomePage> {
                   child: Container(
                     child: Text(
                       'Haridwar',
-                      style: TextStyle(color: Colors.white, fontSize: 18.0),
+                      style: TextStyle(color: Theme.of(context).primaryColorDark, fontSize: 18.0),
                     ),
                   ),
                 ),
@@ -71,7 +71,7 @@ class _HomePageState extends State<HomePage> {
                   child: Container(
                     child: Text(
                       'Rishikesh',
-                      style: TextStyle(color: Colors.white, fontSize: 18.0),
+                      style: TextStyle(color: Theme.of(context).primaryColorDark, fontSize: 18.0),
                     ),
                   ),
                 ),
@@ -79,7 +79,7 @@ class _HomePageState extends State<HomePage> {
                   child: Container(
                     child: Text(
                       'Roorkee',
-                      style: TextStyle(color: Colors.white, fontSize: 18.0),
+                      style: TextStyle(color: Theme.of(context).primaryColorDark, fontSize: 18.0),
                     ),
                   ),
                 ),
@@ -87,7 +87,7 @@ class _HomePageState extends State<HomePage> {
                   child: Container(
                     child: Text(
                       'Haldwani',
-                      style: TextStyle(color: Colors.white, fontSize: 18.0),
+                      style: TextStyle(color: Theme.of(context).primaryColorDark, fontSize: 18.0),
                     ),
                   ),
                 ),

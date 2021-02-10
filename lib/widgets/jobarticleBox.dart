@@ -58,7 +58,7 @@ Widget jobarticleBox(BuildContext context, Article article, String heroId) {
                                 padding: EdgeInsets.fromLTRB(8, 4, 8, 4),
                                 margin: EdgeInsets.fromLTRB(0, 0, 0, 8),
                                 child: Text(
-                                  article.category,
+                                  article.money,
                                   style: TextStyle(
                                       color: Theme.of(context).primaryColorDark,
                                       fontSize: 11,
