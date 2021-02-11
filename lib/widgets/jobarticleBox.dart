@@ -14,7 +14,7 @@ Widget jobarticleBox(BuildContext context, Article article, String heroId) {
       children: <Widget>[
         Container(
           alignment: Alignment.bottomRight,
-          margin: EdgeInsets.fromLTRB(20, 16, 8, 0),
+          margin: EdgeInsets.fromLTRB(20, 16, 0, 0),
           child: Card(
             elevation: 6,
             child: Padding(
@@ -22,7 +22,7 @@ Widget jobarticleBox(BuildContext context, Article article, String heroId) {
               child: Column(
                 children: <Widget>[
                   Container(
-                    padding: EdgeInsets.fromLTRB(8, 0, 4, 8),
+                    padding: EdgeInsets.fromLTRB(8, 0, 4, 0),
                     child: Column(
                       children: <Widget>[
                         Container(
@@ -55,18 +55,58 @@ Widget jobarticleBox(BuildContext context, Article article, String heroId) {
                                 decoration: BoxDecoration(
                                     color: Theme.of(context).canvasColor,
                                     borderRadius: BorderRadius.circular(3)),
-                                padding: EdgeInsets.fromLTRB(8, 4, 8, 4),
-                                margin: EdgeInsets.fromLTRB(0, 0, 0, 8),
-                                child: Text(
-                                  article.money,
+                                padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
+                                margin: EdgeInsets.fromLTRB(0, 0, 0, 0),
+                                child: Text( " ₹ " + article.money + " / Annum",
                                   style: TextStyle(
                                       color: Theme.of(context).primaryColorDark,
-                                      fontSize: 11,
+                                      fontSize: 22,
                                       fontWeight: FontWeight.w400),
                                 ),
                               ),
+
                               Container(
-                                padding: EdgeInsets.fromLTRB(4, 8, 4, 8),
+                                padding: EdgeInsets.fromLTRB(4, 4, 4, 4),
+                                child: Row(
+                                  children: <Widget>[
+                                    Icon(
+                                      Icons.location_city,
+                                      color: Theme.of(context).canvasColor,
+                                      size: 12.0,
+                                    ),
+                                    SizedBox(
+                                      width: 4,
+                                    ),
+                                    Text(
+                                      article.company,
+                                      style:
+                                      Theme.of(context).textTheme.caption,
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Container(
+                                padding: EdgeInsets.fromLTRB(4, 4, 4, 4),
+                                child: Row(
+                                  children: <Widget>[
+                                    Icon(
+                                      Icons.location_on,
+                                      color: Theme.of(context).canvasColor,
+                                      size: 12.0,
+                                    ),
+                                    SizedBox(
+                                      width: 4,
+                                    ),
+                                    Text(
+                                      article.location,
+                                      style:
+                                      Theme.of(context).textTheme.caption,
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Container(
+                                padding: EdgeInsets.fromLTRB(4, 4, 4, 4),
                                 child: Row(
                                   children: <Widget>[
                                     Icon(

@@ -145,7 +145,7 @@ class _RishikeshJobArticlesState extends State<RishikeshJobArticles> {
     if (!this.mounted) return featuredArticles;
     try {
       String requestUrl =
-          "$Jobs_URL/wp-json/wp/v2/posts?categories[]=$FEATURED_ID&per_page=10&_fields=id,date,title,content,custom,link,mobile,money.location,company";
+          "$WORDPRESS_URL/wp-json/wp/v2/posts?categories[]=$FEATURED_ID&per_page=10&_fields=id,date,title,content,custom,link,mobile,money.location,company";
       Response response = await customDio.get(
         requestUrl,
         options:

@@ -12,6 +12,9 @@ class Article {
   final String date;
   final String link;
   final String money;
+  final String location;
+  final String company;
+  final String mobile;
   final int catId;
 
   Article(
@@ -25,6 +28,9 @@ class Article {
       this.category,
       this.date,
       this.link,
+      this.location,
+      this.company,
+      this.mobile,
       this.money,
       this.catId});
 
@@ -35,7 +41,10 @@ class Article {
         .toString();
     String title = json['title']['rendered'];
     String link = json["link"];
+    String location = json["location"];
+    String company = json["company"];
     String money = json["money"];
+    String mobile = json["mobile"];
     int id = -1;
 
     String image =
@@ -79,7 +88,10 @@ class Article {
         category: category,
         date: date,
         link: link,
+        location: location,
+        company: company,
         money: money,
+        mobile: mobile,
         catId: catId);
   }
 

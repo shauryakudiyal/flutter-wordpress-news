@@ -11,12 +11,12 @@ import 'package:lokaarpan/blocs/favArticleBloc.dart';
 import 'package:lokaarpan/common/constants.dart';
 import 'package:lokaarpan/common/helpers.dart';
 import 'package:lokaarpan/models/article.dart';
-import 'package:lokaarpan/pages/comments.dart';
-import 'package:lokaarpan/widgets/articleBox.dart';
 import 'package:html/dom.dart' as dom;
 import 'package:loading/indicator/ball_beat_indicator.dart';
 import 'package:loading/loading.dart';
+import 'package:lokaarpan/widgets/jobarticleBox.dart';
 import 'package:share/share.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class JobArticle extends StatefulWidget {
   final dynamic article;
@@ -51,7 +51,7 @@ class _JobArticleState extends State<JobArticle> {
       int catId = widget.article.catId;
 
       String requestUrl =
-          "$WORDPRESS_URL/wp-json/wp/v2/posts?exclude=$postId&categories[]=$catId&per_page=3";
+          "$Jobs_URL/wp-json/wp/v2/posts?exclude=$postId&categories[]=$catId&per_page=3";
       Response response = await customDio.get(
         requestUrl,
         options: buildCacheOptions(Duration(days: 3),
@@ -217,26 +217,23 @@ class _JobArticleState extends State<JobArticle> {
                             borderRadius: BorderRadius.circular(3)),
                         padding: EdgeInsets.fromLTRB(8, 4, 8, 4),
                         margin: EdgeInsets.all(16),
-                        child: Text(
-                          article.category,
+                        child: Text(" ₹ " + article.money + " / Annum",
                           style: TextStyle(
                               color: Theme.of(context).primaryColorDark,
-                              fontSize: 11),
+                              fontSize: 20),
                         ),
                       ),
                       SizedBox(
                         height: 45,
                         child: ListTile(
-                          leading: CircleAvatar(
-                            backgroundImage: NetworkImage(article.avatar),
-                          ),
+
                           title: Text(
-                            "By " + article.author,
-                            style: TextStyle(fontSize: 12),
+                            article.company,
+                            style: TextStyle(fontSize: 18),
                           ),
                           subtitle: Text(
-                            article.date,
-                            style: TextStyle(fontSize: 11),
+                            article.location,
+                            style: TextStyle(fontSize: 14),
                           ),
                         ),
                       ),
@@ -332,14 +329,9 @@ class _JobArticleState extends State<JobArticle> {
                     color: Colors.blue,
                     size: 24.0,
                   ),
-                  onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => Comments(article.id),
-                          fullscreenDialog: true,
-                        ));
-                  },
+                  onPressed:
+                        () => launch("tel:" + article.mobile),
+
                 ),
               ),
               Container(
@@ -394,7 +386,7 @@ class _JobArticleState extends State<JobArticle> {
                         ),
                       );
                     },
-                    child: articleBox(context, item, heroId),
+                    child: jobarticleBox(context, item, heroId),
                   );
                 }).toList(),
               ),

@@ -218,7 +218,7 @@ class _ArticlesState extends State<Articles> {
                       },
                       child: Column(
                         children: <Widget>[
-                          ENABLE_ADS && index % 5 == 0
+                          ENABLE_ADS && index % 15 == 0
                               ? Container(
                                   margin: EdgeInsets.fromLTRB(10, 4, 4, 0),
                                   child: Card(
