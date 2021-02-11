@@ -130,8 +130,8 @@ class _MyHomePageState extends State<MyHomePage> {
   final List<Widget> _widgetOptions = [
     Articles(),
     Search(),
-    ClassifiedArticles(),
-    HomePage(),
+    Classified(),
+    Job(),
     Settings()
   ];
 

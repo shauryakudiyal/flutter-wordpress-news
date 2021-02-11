@@ -13,11 +13,11 @@ import 'package:lokaarpan/models/article.dart';
 import 'package:lokaarpan/pages/category_articles.dart';
 import 'package:lokaarpan/single_articles/featured_article.dart';
 import 'package:lokaarpan/single_articles/job_article.dart';
-import 'package:lokaarpan/widgets/jobarticleBox.dart';
 import 'package:lokaarpan/widgets/articleBoxFeatured.dart';
 import 'package:http/http.dart' as http;
 import 'package:loading/indicator/ball_beat_indicator.dart';
 import 'package:loading/loading.dart';
+import 'package:lokaarpan/widgets/jobarticleBox.dart';
 
 
 
@@ -95,7 +95,7 @@ class _HaldwaniJobArticlesState extends State<HaldwaniJobArticles> {
 
     try {
       String requestUrl =
-          "$Jobs_URL/wp-json/wp/v2/posts?page=$page&per_page=10&_fields=id,date,title,content,custom,link,mobile,money.location,company";
+          "$Jobs_URL/wp-json/wp/v2/posts?page=$page&per_page=10&_fields=id,date,title,content,custom,link,mobile,money,location,company";
       Response response = await customDio.get(
         requestUrl,
         options:
@@ -145,7 +145,7 @@ class _HaldwaniJobArticlesState extends State<HaldwaniJobArticles> {
     if (!this.mounted) return featuredArticles;
     try {
       String requestUrl =
-          "$WORDPRESS_URL/wp-json/wp/v2/posts?categories[]=$FEATURED_ID&per_page=10&_fields=id,date,title,content,custom,link,mobile,money.location,company";
+          "$WORDPRESS_URL/wp-json/wp/v2/posts?categories[]=$FEATURED_ID&per_page=10&_fields=id,date,title,content,custom,link,mobile,money,location,company";
       Response response = await customDio.get(
         requestUrl,
         options:
@@ -258,6 +258,7 @@ class _HaldwaniJobArticlesState extends State<HaldwaniJobArticles> {
       },
     );
   }
+
 
   Widget jobCategories(BuildContext context) {
     return GridView.count(

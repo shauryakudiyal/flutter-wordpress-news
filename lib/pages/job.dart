@@ -6,14 +6,14 @@ import 'package:lokaarpan/job/rishikesh.dart';
 import 'package:lokaarpan/job/roorkee.dart';
 
 
-class HomePage extends StatefulWidget {
+class Job extends StatefulWidget {
   final Widget child;
-  HomePage({Key key, this.child}) : super(key: key);
-  _HomePageState createState() => _HomePageState();
+  Job({Key key, this.child}) : super(key: key);
+  _JobState createState() => _JobState();
 }
 
 
-class _HomePageState extends State<HomePage> {
+class _JobState extends State<Job> {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(

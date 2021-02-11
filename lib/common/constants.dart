@@ -32,18 +32,11 @@ const List<dynamic> CUSTOM_CATEGORIES = [
 ];
 const String Jobs_URL = "https://jobs.lokaarpan.com";
 
-const String CLASSIFIED_URL = "https://ec.lokaarpan.com";
-const List<dynamic> Classified_CATEGORIES = [
-  ["Marketing", "assets/boxed/lifestyle.png", 7248],
-  ["Fashion", "assets/boxed/fashion.png", 12],
-  ["Music", "assets/boxed/music.png", 14],
-  ["Photography", "assets/boxed/photography.png", 15],
 
-];
 
 const String ONE_SIGNAL_APP_ID = "99a5b725-e4f4-413d-bbb9-5dd2d157e703";
 
-const bool ENABLE_ADS = false;
+const bool ENABLE_ADS = true;
 const String ADMOB_ID = "ca-app-pub-3940256099942544~3347511713";
 const String ADMOB_BANNER_ID_1 = "ca-app-pub-3940256099942544/6300978111";
 
