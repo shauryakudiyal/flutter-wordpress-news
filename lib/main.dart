@@ -298,8 +298,8 @@ class _MyHomePageState extends State<MyHomePage> {
             items: <Widget>[
               Icon(Icons.list, size: 30, semanticLabel: "news",),
               Icon(Icons.search, size: 30),
-              Icon(Icons.people_outline, size: 30),
-              Icon(Icons.account_tree_sharp),
+              Icon(Icons.people, size: 30),
+              Icon(Icons.wallet_membership),
               Icon(Icons.settings, size: 30,)
             ],
             onTap: _onItemTapped,

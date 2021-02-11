@@ -20,7 +20,6 @@ import 'package:loading/loading.dart';
 import 'package:lokaarpan/widgets/jobarticleBox.dart';
 
 
-
 class DehradunJobArticles extends StatefulWidget {
   @override
   _DehradunJobArticlesState createState() => _DehradunJobArticlesState();
