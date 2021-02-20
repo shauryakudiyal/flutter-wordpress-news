@@ -24,7 +24,7 @@ class _SettingsState extends State<Settings> {
       appBar: AppBar(
         centerTitle: true,
         title: Text(
-          'More',
+          'Settings',
           style: Theme.of(context).textTheme.headline2,
         ),
         elevation: 5,
@@ -48,7 +48,7 @@ class _SettingsState extends State<Settings> {
               alignment: Alignment.center,
               padding: EdgeInsets.fromLTRB(0, 20, 0, 20),
               child: Text(
-                "Version 1.0.0 \n flutterblog.crumet.com \n Demo flutter app for wordpress news website",
+                "Version 1.0.0 \n lokaarpan.com \n Lokaarpan news , classified , jobs app",
                 textAlign: TextAlign.center,
                 style: Theme.of(context).textTheme.bodyText2,
               ),
@@ -94,27 +94,27 @@ class _SettingsState extends State<Settings> {
                       FlatButton(
                         padding: EdgeInsets.all(0),
                         onPressed: () async {
-                          const url = 'https://flutterblog.crumet.com';
+                          const url = 'https://lokaarpan.com';
                           if (await canLaunch(url)) {
                             await launch(url);
                           } else {
                             throw 'Could not launch $url';
                           }
                         },
-                        child: Text("flutterblog.crumet.com",
+                        child: Text("lokaarpan.com",
                             style: Theme.of(context).textTheme.bodyText2),
                       ),
                       FlatButton(
                           padding: EdgeInsets.all(0),
                           onPressed: () async {
-                            const url = 'mailto:info@crumet.com';
+                            const url = 'mailto:lokaarpans@gmail.com';
                             if (await canLaunch(url)) {
                               await launch(url);
                             } else {
                               throw 'Could not launch $url';
                             }
                           },
-                          child: Text("info@crumet.com",
+                          child: Text("lokaarpans@gmail.com",
                               style: Theme.of(context).textTheme.bodyText2)),
                     ],
                   ),
@@ -122,7 +122,7 @@ class _SettingsState extends State<Settings> {
                 InkWell(
                   onTap: () {
                     Share.share(
-                        'Check out our blog: https://flutterblog.crumet.com');
+                        'Check out our blog: https://lokaarpan.com');
                   },
                   child: ListTile(
                     leading: Image.asset(
@@ -130,7 +130,7 @@ class _SettingsState extends State<Settings> {
                       width: 30,
                     ),
                     title: Text('Share'),
-                    subtitle: Text("Spread the words of flutter blog crumet",
+                    subtitle: Text("Spread the words of lokaarpan",
                         style: Theme.of(context).textTheme.bodyText2),
                   ),
                 ),

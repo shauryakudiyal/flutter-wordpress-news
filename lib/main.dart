@@ -37,7 +37,7 @@ class MyApp extends StatelessWidget {
     return Consumer<AppStateNotifier>(builder: (context, appState, child) {
       return MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'Icilome',
+        title: 'Lokaarpan',
         theme: ThemeData(
             brightness: Brightness.light,
             primaryColorLight: Colors.white,

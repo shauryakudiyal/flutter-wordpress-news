@@ -21,9 +21,13 @@ class _JobState extends State<Job> {
       child: Scaffold(
           appBar: AppBar(
             backgroundColor: Theme.of(context).primaryColorLight,
-            title: Padding(
-              padding: EdgeInsets.only(top: 8.0),
+            title: Image(
+              image: Theme.of(context).brightness == Brightness.light
+                  ? AssetImage('assets/icon.png')
+                  : AssetImage('assets/icon-dark.png'),
+              height: 45,
             ),
+            elevation: 5,
             bottom: TabBar(
               isScrollable: true,
               indicatorColor: Theme.of(context).primaryColorDark,

@@ -109,7 +109,7 @@ class _SearchState extends State<Search> {
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       appBar: AppBar(
         centerTitle: true,
-        title: Text('Search', style: Theme.of(context).textTheme.headline2),
+        title: Text('Search News', style: Theme.of(context).textTheme.headline2),
         elevation: 5,
         backgroundColor: Theme.of(context).backgroundColor,
       ),

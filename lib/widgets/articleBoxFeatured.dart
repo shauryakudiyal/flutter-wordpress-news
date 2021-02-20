@@ -6,13 +6,13 @@ Widget articleBoxFeatured(
     BuildContext context, Article article, String heroId) {
   return ConstrainedBox(
     constraints: new BoxConstraints(
-        minHeight: 280.0, maxHeight: 290.0, minWidth: 360.0, maxWidth: 360.0),
+        minHeight: 240.0, maxHeight: 250.0, minWidth: 360.0, maxWidth: 360.0),
     child: Stack(
       children: <Widget>[
         Padding(
           padding: EdgeInsets.all(8),
           child: Container(
-            height: 250,
+            height: 260,
             width: 400,
             child: Card(
               child: Hero(
@@ -42,7 +42,11 @@ Widget articleBoxFeatured(
             ),
           ),
         ),
-        Positioned(
+      ],
+    ),
+  );
+}
+        /*Positioned(
           left: 20,
           top: 80,
           right: 20,
@@ -75,8 +79,8 @@ Widget articleBoxFeatured(
                               }
                               return baseStyle;
                             }),
-                      ),*/
-                     /* Container(
+                      ),
+                      Container(
                         alignment: Alignment.topLeft,
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -118,14 +122,14 @@ Widget articleBoxFeatured(
                           ],
                         ),
                       ),
-                    ],*/
+                    ],
                   ),
                 ),
               ),
             ),
           ),
         ),
-      ],
-    ),
-  );
-}
+
+         */
+
+         */
