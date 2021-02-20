@@ -262,10 +262,10 @@ class _HaldwaniJobArticlesState extends State<HaldwaniJobArticles> {
 
   Widget jobCategories(BuildContext context) {
     return GridView.count(
-      padding: EdgeInsets.all(16),
+      padding: EdgeInsets.all(1),
       shrinkWrap: true,
       physics: ScrollPhysics(),
-      crossAxisCount: 4,
+      crossAxisCount: 5,
       children: List.generate(CATEGORIES.length, (index) {
         var cat = CATEGORIES[index];
         var name = cat[0];
@@ -283,7 +283,7 @@ class _HaldwaniJobArticlesState extends State<HaldwaniJobArticles> {
               );
             },
             child: Container(
-              padding: EdgeInsets.fromLTRB(8, 16, 8, 8),
+              padding: EdgeInsets.fromLTRB(8, 4, 8, 0),
               child: Column(
                 children: <Widget>[
                   SizedBox(width: 100, height: 45, child: Image.asset(image)),
